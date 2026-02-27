@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper | Premium Flight Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SkyHopper</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="login.html" id="nav-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Flight</h1>
+            <p>Search millions of flights to find the best deals for your next adventure</p>
+        </div>
+    </section>
+
+    <!-- Search Box Section -->
+    <div class="search-container">
+        <div class="search-box">
+            <form class="search-form" id="main-search-form">
+                <div class="input-group">
+                    <label for="from-input">From</label>
+                    <input type="text" id="from-input" name="from" placeholder="Departure city" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="to-input">To</label>
+                    <input type="text" id="to-input" name="to" placeholder="Destination" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="departure-input">Departure Date</label>
+                    <input type="date" id="departure-input" name="departure" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="return-input">Return Date</label>
+                    <input type="date" id="return-input" name="return">
+                </div>
+
+                <button type="submit" class="search-btn">Search Flights</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="destinations-section">
+            <h2 class="section-title">Popular Destinations</h2>
+            <div class="destinations-grid">
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.pexels.com/photos/1534411/pexels-photo-1534411.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Paris">
+                        <div class="price-badge">Starting $450</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Paris</h3>
+                        <p>The City of Lights.</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://plus.unsplash.com/premium_photo-1661902398022-762e88ff3f82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dG9reW98ZW58MHx8MHx8fDA%3D"
+                            alt="Tokyo">
+                        <div class="price-badge">Starting $950</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Tokyo</h3>
+                        <p>Tradition meets future.</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600"
+                            alt="New York">
+                        <div class="price-badge">Starting $320</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>New York</h3>
+                        <p>The city that never sleeps.</p>
+                    </div>
+                </article>
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D"
+                            alt="Paris">
+                        <div class="price-badge">Starting $750</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Dubai</h3>
+                        <p>The City of the Future.</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVybGlufGVufDB8fDB8fHww"
+                            alt="Tokyo">
+                        <div class="price-badge">Starting $1100</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Berlin</h3>
+                        <p>The City of History and Culture</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SXN0YW5idWx8ZW58MHx8MHx8fDA%3D"
+                            alt="New York">
+                        <div class="price-badge">Starting $2000</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Istanbul</h3>
+                        <p>A City of Empires</p>
+                    </div>
+                </article>
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="Paris">
+                        <div class="price-badge">Starting $250</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Rome</h3>
+                        <p>A Journey Through Time.</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://plus.unsplash.com/premium_photo-1694475481348-7cbe417be129?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FuYWRhfGVufDB8fDB8fHww"
+                            alt="Tokyo">
+                        <div class="price-badge">Starting $950</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Canada</h3>
+                        <p>Land of Natural Wonders</p>
+                    </div>
+                </article>
+
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1684499085169-5af4614b74d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2F1ZGlhJTIwYXJhYmlhfGVufDB8fDB8fHww0"
+                            alt="New York">
+                        <div class="price-badge">Starting $290</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>saudia arabia</h3>
+                        <p>The Heart of the Arab World</p>
+                    </div>
+                </article>
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.pexels.com/photos/3935282/pexels-photo-3935282.jpeg?auto=compress&cs=tinysrgb&w=500"
+                            alt="Los Angeles">
+                        <div class="price-badge">Starting $380</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Los Angeles</h3>
+                        <p>City of Angels</p>
+                    </div>
+                </article>
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG9uZG9ufGVufDB8fDB8fHx8MA%3D%3D"
+                            alt="London">
+                        <div class="price-badge">Starting $420</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>London</h3>
+                        <p>Historic Capital</p>
+                    </div>
+                </article>
+                <article class="dest-card">
+                    <div class="dest-img">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3lkbmV5fGVufDB8fDB8fHx8MA%3D%3D"
+                            alt="Sydney">
+                        <div class="price-badge">Starting $550</div>
+                    </div>
+                    <div class="dest-content">
+                        <h3>Sydney</h3>
+                        <p>Harbor City</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <br><br><br> <br>
+        <section class="features">
+            <div class="container-fluid">
+                <h2 class="section-title">Travel Made Simple</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">We provide the best experience for your travel needs
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Secure Booking</h3>
+                        <p class="feature-desc">Your payments and personal data are protected with enterprise-grade
+                            security
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Best Prices</h3>
+                        <p class="feature-desc">We guarantee the lowest prices or we'll refund the difference</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-desc">Our dedicated team is here to help you around the clock</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg class="icon-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Instant Confirmation</h3>
+                        <p class="feature-desc">Get your booking confirmed instantly with e-tickets sent to your email
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br> <br><br>
+        <!-- App Promo -->
+        <section class="app-promo">
+            <div class="app-promo-grid">
+                <div class="app-promo-content">
+                    <h2>Download Our <span class="text-gradient-teal">Mobile App</span></h2>
+                    <p>Get exclusive deals and manage your bookings on the go. Our app provides real-time flight
+                        updates,
+                        easy check-in, and personalized recommendations.</p>
+
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <div class="app-feature-icon">
+                                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span>Exclusive app-only deals</span>
+                        </div>
+                        <div class="app-feature">
+                            <div class="app-feature-icon">
+                                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span>Real-time flight tracking</span>
+                        </div>
+                        <div class="app-feature">
+                            <div class="app-feature-icon">
+                                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <span>Mobile boarding pass</span>
+                        </div>
+                    </div>
+
+                    <div class="app-buttons">
+                        <a href="#" class="app-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                            </svg>
+                            <div class="app-btn-text">
+                                <small>Download on the</small>
+                                <span>App Store</span>
+                            </div>
+                        </a>
+                        <a href="#" class="app-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z" />
+                            </svg>
+                            <div class="app-btn-text">
+                                <small>Get it on</small>
+                                <span>Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="app-promo-image">
+                    <div class="phone-mockup animate-float">
+                        <div class="phone-screen">
+                            <img src="https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="App Screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <br><br><br><br>
+
+        <!-- Marquee Deals -->
+        <section class="marquee-section">
+            <div class="marquee-header">
+                <h2 class="section-title">Special Flight Offers</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Save your favorite destinations and never miss a
+                    deal
+                </p>
+            </div> <br><br>
+
+            <div class="marquee-container animate-marquee" id="marqueeContainer">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <br><br><br><br>
+        <!-- Image Slider -->
+        <section class="slider-section">
+            <div class="slider-header">
+                <h2 class="section-title">Explore Beautiful Places</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Get inspired by these stunning travel destinations
+                    around the world</p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-main" id="sliderMain">
+                    <!-- Slides will be generated by JavaScript -->
+                </div>
+
+                <button class="slider-nav prev" onclick="prevSlide()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+
+                <button class="slider-nav next" onclick="nextSlide()">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-lg-12">
+                        <h3>Travel Resources</h3>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h5>Flight Search</h5>
+                                <p>Find the best flight deals with real-time price comparisons,
+                                    flexible date options, and multiple airline choices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Hotel Bookings</h5>
+                                <p>Discover and book hotels worldwide with detailed descriptions,
+                                    verified guest reviews, and competitive prices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Guides</h5>
+                                <p>Explore destinations with curated travel guides, tips,
+                                    and recommendations to plan your perfect trip.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Insurance</h5>
+                                <p>Comprehensive travel insurance coverage for peace of mind
+                                    during your journeys around the world.</p>
+                            </div>
+                        </div>
+                        <div class="footer-brand">
+                            <span>SKYHOPPER</span>
+                            <span class="footer-tagline"> © 2026 SkyHopper Airlines. Student Project.</span>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

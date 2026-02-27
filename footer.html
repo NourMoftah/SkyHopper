@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-light-gray: #e1e8ed;
+            --color-very-light: #f5f7fa;
+            --color-accent: #ffd166;
+            /* #FAB20B */
+            --color-dark-navy: #0b1b2b;
+            --color-medium-blue: #2d4d7f;
+            --color-purple: #7b44ab;
+            --font-primary: "roboto", sans-serif;
+        }
+
+        body {
+             font-family:
+            -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu","Cantarell", sans-serif;
+            color: #1a1a1a;
+            background-color: #f8f9fa; 
+        } 
+
+        /* =================================================== footer start=========================================== */
+
+        .footer-section {
+            background: var(--color-dark-navy);
+            color: white;
+            padding: 60px 0 40px;
+        }
+
+        .footer-section h3 {
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .resource-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 209, 102, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-accent);
+            box-shadow: 0 20px 40px rgba(255, 209, 102, 0.1);
+        }
+
+        .resource-item h5 {
+            font-family: var(--font-display);
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .resource-item p {
+            color: var(--color-light-gray);
+            line-height: 2.2;
+        }
+
+        .footer-brand {
+            text-align: center;
+            border-top: 1px solid rgba(255, 209, 102, 0.3);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-brand span:first-child {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            display: block;
+        }
+
+        .footer-tagline {
+            color: var(--color-light-gray);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .routes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-form {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .app-promo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .app-promo-image {
+                margin-top: 32px;
+            }
+        }
+
+        /* footer responsive */
+
+        @media (max-width: 992px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section h3 {
+                font-size: 24px;
+            }
+        }
+
+        /* footer end */
+    </style>
+</head>
+
+<body>
+
+    <!-- Educational Resources Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-lg-12">
+                        <h3>Travel Resources</h3>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h5>Flight Search</h5>
+                                <p>Find the best flight deals with real-time price comparisons,
+                                    flexible date options, and multiple airline choices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Hotel Bookings</h5>
+                                <p>Discover and book hotels worldwide with detailed descriptions,
+                                    verified guest reviews, and competitive prices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Remote Sensing Analysis</h5>
+                                <p>Explore destinations with curated travel guides, tips,
+                                    and recommendations to plan your perfect trip.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Guides</h5>
+                                <p>Solar activity tracking, radiation environment analysis, and space weather impact on
+                                    satellite operations.</p>
+                            </div>
+                        </div>
+                        <div class="footer-brand">
+                            <span>SKYTRAVEL</span>
+                            <span class="footer-tagline"> © 2024 SkyPlan. All rights reserved. Made with for travelers
+                                worldwide</span>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

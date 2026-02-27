@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper | Complete Booking</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/png" href="./img/logo.png">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SkyHopper</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="login.html" id="nav-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content justify-center padding-6rem">
+        <section class="text-center">
+            <h2>Confirm Your Booking</h2>
+            <p class="text-secondary mb-40 font-1-1rem">Review your flight details and complete your booking</p>
+            
+            <div class="card max-width-700 margin-auto">
+                <div class="bg-card padding-25 mb-10 border-rounded border-custom">
+                    <h3 class="color-accent mb-15 font-1-3rem">Flight Summary</h3>
+                    <p class="mb-10"><strong class="color-accent">Flight:</strong> <span id="summary-route" class="text-secondary"></span></p>
+                    <p><strong class="color-accent">Base Price:</strong> <span id="summary-price" class="color-accent font-1-2rem"></span> per person</p>
+                </div>
+
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="seat-class">Class</label>
+                        <select id="seat-class">
+                            <option value="Economy">Economy</option>
+                            <option value="Business">Business (+$200)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passengers">Number of Passengers</label>
+                        <input type="number" id="passengers" min="1" max="5" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Optional Services</label>
+                        <div class="flex-column gap-12">
+                            <div class="display-flex align-center gap-10">
+                                <input type="checkbox" id="extra-bag" class="width-auto margin-0"> 
+                                <label for="extra-bag" class="display-inline margin-0 cursor-pointer">Extra Baggage (+$50)</label>
+                            </div>
+                            <div class="display-flex align-center gap-10">
+                                <input type="checkbox" id="insurance" class="width-auto margin-0"> 
+                                <label for="insurance" class="display-inline margin-0 cursor-pointer">Travel Insurance (+$30)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-card padding-20 border-rounded margin-25-0 border-custom">
+                        <div class="display-flex justify-between align-center mb-10">
+                            <span class="text-secondary">Total Price:</span>
+                            <span id="total-price" class="font-1-5rem font-weight-700 color-accent">$450.00</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary width-full mt-10">Confirm & Pay</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-lg-12">
+                        <h3>Travel Resources</h3>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h5>Flight Search</h5>
+                                <p>Find the best flight deals with real-time price comparisons,
+                                    flexible date options, and multiple airline choices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Hotel Bookings</h5>
+                                <p>Discover and book hotels worldwide with detailed descriptions,
+                                    verified guest reviews, and competitive prices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Guides</h5>
+                                <p>Explore destinations with curated travel guides, tips,
+                                    and recommendations to plan your perfect trip.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Insurance</h5>
+                                <p>Comprehensive travel insurance coverage for peace of mind
+                                    during your journeys around the world.</p>
+                            </div>
+                        </div>
+                        <div class="footer-brand">
+                            <span>SKYHOPPER</span>
+                            <span class="footer-tagline"> © 2026 SkyHopper Airlines. Student Project.</span>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper | Register</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <style>
+        /* body {
+            font-family: "Poppins", Arial, sans-serif;
+            background: #0B1B2B;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 35px 45px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            width: 380px;
+            text-align: center;
+        } */
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        
+        .login-page {
+            min-height: 100vh;
+            background-image: url("./img/م.jpeg");
+           
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* صندوق اللوجن */
+        .register-container {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 40px 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 380px;
+            text-align: center;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url("./img/ضض.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 1px solid #030b35ff;
+            padding: 3px;
+            background-color: #fff;
+            /* box-shadow: 0 0 12px rgba(72,169,166,0.35); */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 6px;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #F2B602;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: calc(100% - 52px);
+            padding: 11px 40px 11px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            background: #F5F7FA;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #F2B602;
+            box-shadow: 0 0 6px rgba(242, 182, 2, 0.35);
+        }
+
+        .input-group i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        button {
+            padding: 11px;
+            background: #F2B602;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #e0a800;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .link {
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #F2B602;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="login-page">
+
+    <div class="page-wrapper">
+        <div class="register-container">
+            <a href="index.html" class="logo-link">
+                <img src="./img/logo.PNG" alt="SkyHopper Logo" class="logo-img">
+                <h1>SkyHopper</h1>
+            </a>
+
+            <form id="register-form">
+                <div class="input-group">
+                    <input type="text" id="reg-name" placeholder="Full Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="reg-email" placeholder="Email Address" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="reg-password" placeholder="Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="error-message" id="error-message"></div>
+
+                <button type="submit"><i class="fas fa-user-check"></i> Register</button>
+            </form>
+
+            <div class="link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/common.js"></script>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

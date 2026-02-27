@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper - رحلتك إلى مكة تبدأ من هنا</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Roboto:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+</head>
+
+<body dir="rtl" class="features-page">
+    <!-- Language Toggle -->
+    <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">
+        <span id="langText">EN</span>
+    </button>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" data-ar="SkyHopper" data-en="SkyHopper">SkyHopper</div>
+                <div class="nav-links">
+                    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                    <a href="#" data-ar="رحلاتي" data-en="My Trips">رحلاتي</a>
+                    <a href="#" data-ar="المساعدة" data-en="Help">المساعدة</a>
+                    <a href="#" data-ar="الحج" data-en="Hajj">الحج</a>
+                </div>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" data-ar="التسجيل" data-en="Sign Up">التسجيل</button>
+                    <button class="btn btn-primary-header" data-ar="تسجيل الدخول" data-en="Log In">تسجيل الدخول</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-8 mx-5 px-5 ">
+                    <div class="hero-content ">
+                        <h1 class="hero-title" data-ar="رحلتك إلى مكة تبدأ من هنا لتعيش تجربة لا تُنسى"
+                            data-en="Your Journey to Makkah Starts Here - Experience an Unforgettable Journey">رحلتك إلى
+                            مكة تبدأ من هنا لتعيش تجربة لا تُنسى
+                        </h1>
+                        <p class="hero-description"
+                            data-ar="خطط لرحلة الحج بسهولة وثقة. احجز رحلاتك، احجز الفنادق، تتبع مسارك، واحصل على دعم مخصص وإرشادات دقيقة لتجربة حج سلسة."
+                            data-en="Plan your Hajj trip with ease and confidence. Book flights, reserve hotels, track your itinerary, and access dedicated support and accurate guidance for a smooth pilgrimage experience.">
+                            خطط لرحلة الحج بسهولة وثقة. احجز رحلاتك، احجز الفنادق، تتبع مسارك، واحصل على دعم مخصص
+                            وإرشادات دقيقة لتجربة حج سلسة.
+                        </p>
+                        <div class="mission-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">1,000+</span>
+                                <span class="stat-label" data-ar="رحلة حج سنوياً" data-en="Hajj Trips Annually">رحلة حج
+                                    سنوياً</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label" data-ar="دعم الحجاج" data-en="Pilgrim Support">دعم
+                                    الحجاج</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label" data-ar="فنادق ووجهات" data-en="Hotels & Destinations">فنادق
+                                    ووجهات</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Location Detection -->
+    <section class="section" id="location">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="section-content">
+                        <div class="section-header">
+                            <span class="section-number">01</span>
+                            <h2 class="section-title" data-ar="تحديد الموقع والتتبع" data-en="Location & Tracking">تحديد
+                                الموقع والتتبع</h2>
+                        </div>
+                        <p class="section-description"
+                            data-ar="خدمات تحديد الموقع بدقة عالية. يستخدم نظامنا إحداثيات GPS لتحديد موقعك الدقيق وحساب المسافات بدقة متناهية."
+                            data-en="Precision location services for tracking. Our system uses GPS coordinates to determine your exact position and calculate distances with high accuracy.">
+                            خدمات تحديد الموقع بدقة عالية. يستخدم نظامنا إحداثيات GPS لتحديد موقعك الدقيق وحساب المسافات
+                            بدقة متناهية.
+                        </p>
+
+                        <div class="control-panel">
+                            <h5 data-ar="إعداد الموقع" data-en="Location Setup">إعداد الموقع</h5>
+                            <button class="btn-primary-custom mb-3" onclick="getCurrentLocation()">
+                                <span data-ar=" تفعيل GPS" data-en=" Activate GPS">تفعيل GPS</span>
+                            </button>
+
+                            <div class="coordinates-display" id="coordinatesDisplay" style="display: none;">
+                                <div class="coord-row">
+                                    <div class="coord-col">
+                                        <label data-ar="خط العرض" data-en="Latitude">خط العرض</label>
+                                        <input type="text" id="latitude" readonly>
+                                    </div>
+                                    <div class="coord-col">
+                                        <label data-ar="خط الطول" data-en="Longitude">خط الطول</label>
+                                        <input type="text" id="longitude" readonly>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="locationStatus" class="mt-3"
+                                style="color: var(--color-medium-blue); font-weight: 500;">
+                                <span data-ar="جاهز لتحديد الموقع" data-en="Ready for positioning">جاهز لتحديد
+                                    الموقع</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="map-container">
+                        <div id="map1" style="height: 450px; width: 100%; border-radius: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Destination & Hotel -->
+    <section class="section" id="destination">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 order-1">
+                    <div class="map-container">
+                        <div id="map2" style="height: 450px; width: 100%; border-radius: 20px;"></div>
+                    </div>
+                </div>
+                <div class="col-5 order-2">
+                    <div class="section-content">
+                        <div class="section-header">
+                            <span class="section-number">02</span>
+                            <h2 class="section-title" data-ar="اختر الوجهة والفندق"
+                                data-en="Select Destination & Hotel">اختر الوجهة والفندق</h2>
+                        </div>
+                        <p class="section-description"
+                            data-ar="اختر المشعر المقدس الذي تريد التوجه إليه. يمكنك أيضاً حفظ موقع فندقك للعودة إليه بسهولة."
+                            data-en="Select the sacred site you wish to navigate to. You can also save your hotel location to easily return to it.">
+                            اختر المشعر المقدس الذي تريد التوجه إليه. يمكنك أيضاً حفظ موقع فندقك للعودة إليه بسهولة.
+                        </p>
+
+                        <div class="control-panel">
+                            <label
+                                style="color: var(--color-dark-navy); font-weight: 600; margin-bottom: 10px; display: block;"
+                                data-ar="اختر المشعر المقصود" data-en="Select Hajj Landmark">اختر المشعر المقصود</label>
+                            <select class="select-custom mb-3" id="destinationSelect" onchange="setDestination()">
+                                <option value="" data-ar="-- اختر --" data-en="-- Select --">-- اختر --</option>
+                                <option value="21.4225,39.8262" data-ar="المسجد الحرام - الكعبة"
+                                    data-en="Al-Masjid Al-Haram - Kaaba">المسجد الحرام - الكعبة</option>
+                                <option value="21.4206,39.8789" data-ar="منى" data-en="Mina">منى</option>
+                                <option value="21.3587,39.9560" data-ar="عرفات" data-en="Arafat">عرفات</option>
+                                <option value="21.4068,39.9033" data-ar="مزدلفة" data-en="Muzdalifah">مزدلفة</option>
+                                <option value="21.4267,39.8696" data-ar="الجمرات" data-en="Jamarat">الجمرات</option>
+                            </select>
+
+                            <hr style="margin: 25px 0; border-color: var(--color-light-gray);">
+                            <label
+                                style="color: var(--color-dark-navy); font-weight: 600; margin-bottom: 10px; display: block;"
+                                data-ar="موقع الفندق" data-en="Hotel Location">موقع الفندق</label>
+                            <button class="btn-primary-custom mb-2" onclick="saveHotelLocation()">
+                                <span data-ar=" حفظ موقع الفندق الحالي" data-en=" Save Current Hotel Location"> حفظ موقع
+                                    الفندق الحالي</span>
+                            </button>
+                            <button class="btn-primary-custom btn-secondary-custom" onclick="loadHotelLocation()">
+                                <span data-ar=" استرجاع موقع الفندق" data-en=" Load Hotel Location"> استرجاع موقع
+                                    الفندق</span>
+                            </button>
+                            <div id="hotelAlert" class="mt-3"
+                                style="display: none; padding: 15px; border-radius: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Weather + Traffic -->
+    <section class="section" id="weather-traffic">
+        <div class="container">
+
+            <div class="row">
+                <!-- Weather (Right Side) -->
+                <div class="col-7 order-1">
+                    <div class="section-content mt-3">
+
+                        <div class="section-header">
+                            <span class="section-number">03</span>
+                            <h2 class="section-title" data-ar="حالة الطقس" data-en="Weather Conditions">
+                                حالة الطقس
+                            </h2>
+                        </div>
+
+                        <p class="section-description" data-ar="بيانات الطقس والظروف الجوية الحالية."
+                            data-en="Current weather data and atmospheric conditions.">
+                            بيانات الطقس والظروف الجوية الحالية.
+                        </p>
+
+                        <div class="weather-card">
+
+                            <div class="weather-icon" id="weatherIcon">
+                                <i class="fas fa-sun" style="font-size: 5rem; color: var(--color-accent);"></i>
+                            </div>
+
+                            <div class="weather-temp">
+                                <span id="temperature"></span>°C
+                            </div>
+
+                            <p id="weatherDesc" data-ar="صافي" data-en="Clear">
+                                صافي
+                            </p>
+
+                            <div class="weather-info">
+
+                                <div class="weather-stat">
+                                    <div class="weather-stat-value">
+                                        <span id="humidity"></span>%
+                                    </div>
+                                    <div class="weather-stat-label" data-ar="الرطوبة" data-en="Humidity">
+                                        الرطوبة
+                                    </div>
+                                </div>
+
+                                <div class="weather-stat">
+                                    <div class="weather-stat-value">
+                                        <span id="windSpeed"></span> <span data-ar="كم / ساعه" data-en="km/h">كم /
+                                            ساعه</span>
+                                    </div>
+                                    <div class="weather-stat-label" data-ar="سرعة الرياح" data-en="Wind Speed">
+                                        سرعة الرياح
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Traffic (Left Side) -->
+                <div class="col-5 order-2">
+
+                    <div class="section-content">
+                        <div class="section-header">
+                            <!-- بدون رقم سكشن -->
+                            <h2 class="section-title" data-ar="الوقت المتوقع" data-en="Estimated Time">
+                                الوقت المتوقع
+                            </h2>
+                        </div>
+
+                        <p class="section-description" data-ar="معلومات حية عن الوقت المتوقع للوصول"
+                            data-en="Live information about estimated arrival time">
+                            معلومات حية عن الوقت المتوقع للوصول
+                        </p>
+
+                        <div class="traffic-grid compact-traffic">
+
+                            <div class="traffic-card">
+                                <div class="traffic-icon">
+                                    <i class="fa-solid fa-person-walking"></i>
+                                </div>
+                                <div class="traffic-value" id="walkTime"></div>
+                                <div class="traffic-label" data-ar="مشياً على الأقدام" data-en="On Foot">
+                                    مشياً على الأقدام
+                                </div>
+                            </div>
+
+                            <div class="traffic-card">
+                                <div class="traffic-icon">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                                <div class="traffic-value" id="carTime"></div>
+                                <div class="traffic-label" data-ar="بالسيارة (100 كم/ساعه)" data-en="By Car (100 km/h)">
+                                    بالسيارة (100 كم/ساعه)
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 5: Voice Navigation -->
+    <section class="section" id="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="section-header">
+                        <span class="section-number">04</span>
+                        <h2 class="section-title" data-ar="الملاحة الصوتية الذكية" data-en="Smart Voice Navigation">
+                            الملاحة الصوتية الذكية</h2>
+                    </div>
+                    <p class="section-description"
+                        data-ar="استمع للإرشادات الصوتية التي تحول المسافة إلى خطوات واضحة. النظام يراقب اتجاهك ويحذرك إذا انحرفت عن المسار."
+                        data-en="Listen to voice instructions that convert distance into clear steps. The system monitors your direction and alerts you if you deviate from the path.">
+                        استمع للإرشادات الصوتية التي تحول المسافة إلى خطوات واضحة. النظام يراقب اتجاهك ويحذرك إذا انحرفت
+                        عن المسار.
+                    </p>
+
+                    <div class="control-panel">
+                        <button class="btn-primary-custom" onclick="startVoiceNavigation()">
+                            <span data-ar="ابدأ الملاحة الصوتية" data-en="Start Voice Navigation">ابدأ
+                                الملاحة الصوتية</span>
+                        </button>
+
+                        <div class="voice-status" id="voiceStatus" style="display: none;">
+                            <span data-ar=" جاري التوجيه..." data-en="Navigating...">جاري التوجيه...</span>
+                        </div>
+
+                        <div class="alert-wrong-direction" id="wrongDirectionAlert">
+                            <div style="font-size: 2rem; margin-bottom: 10px;"><i
+                                    class="fa-solid fa-triangle-exclamation"></i></div>
+                            <span style="font-size: 1.3rem; font-weight: 700;" data-ar="أنت تسير بشكل خاطئ!"
+                                data-en="Wrong Direction!">أنت تسير بشكل خاطئ!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="navigation-info">
+                        <div class="nav-stats">
+                            <div class="nav-stat">
+                                <div class="nav-stat-value" id="remainingKm">--</div>
+                                <div class="nav-stat-label" data-ar="كم متبقي" data-en="KM Left">كم متبقي</div>
+                            </div>
+                            <div class="nav-stat">
+                                <div class="nav-stat-value" id="remainingSteps">--</div>
+                                <div class="nav-stat-label" data-ar="خطوة" data-en="Steps">خطوة</div>
+                            </div>
+                            <div class="nav-stat">
+                                <div class="direction-indicator" id="directionArrow">
+                                    <i class="fas fa-location-arrow"
+                                        style="font-size: 3rem; color: var(--color-accent);"></i>
+                                </div>
+                                <div class="nav-stat-label" id="directionText" data-ar="للأمام" data-en="Forward">
+                                    للأمام
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="navigationMessage" class="mt-3"
+                            style="font-size: 1.1rem; color: var(--color-medium-blue); text-align: center; padding: 20px; background: var(--color-very-light); border-radius: 10px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: SOS -->
+    <section class="section sos-section" id="sos">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <div class="sos-guide-box">
+                        <h3 data-ar="كيف يعمل زر الطوارئ؟" data-en="How does the emergency button work?"><i
+                                class="fa-solid fa-circle-info"></i> كيف يعمل زر الطوارئ؟</h3>
+
+                        <ul class="sos-steps">
+                            <li data-ar="اضغط على زر SOS لبدء الاستغاثة"
+                                data-en="Press the SOS button to start emergency">
+                                <i class="fa-solid fa-hand-pointer"></i>
+                                <span data-ar="اضغط على زر <strong>SOS</strong> لبدء الاستغاثة"
+                                    data-en="Press the <strong>SOS</strong> button to start emergency">اضغط على زر
+                                    <strong>SOS</strong> لبدء الاستغاثة</span>
+                            </li>
+                            <li data-ar="اكتب رقم واتساب الشخص المسؤول"
+                                data-en="Enter the responsible person's WhatsApp number">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span data-ar="اكتب رقم واتساب الشخص المسؤول"
+                                    data-en="Enter the responsible person's WhatsApp number">اكتب رقم واتساب الشخص
+                                    المسؤول</span>
+                            </li>
+                            <li data-ar="سيتم إرسال موقعك الحالي تلقائيًا"
+                                data-en="Your current location will be sent automatically">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span data-ar="سيتم إرسال موقعك الحالي تلقائيًا"
+                                    data-en="Your current location will be sent automatically">سيتم إرسال موقعك الحالي
+                                    تلقائيًا</span>
+                            </li>
+                        </ul>
+
+                        <p class="sos-note" data-ar="تأكد من كتابة رقم الواتساب بصيغة دولية مثل:"
+                            data-en="Make sure to write the WhatsApp number in international format like:">
+                            <span data-ar="تأكد من كتابة رقم الواتساب بصيغة دولية مثل:"
+                                data-en="Make sure to write the WhatsApp number in international format like:">تأكد من
+                               <br> كتابة رقم الواتساب بصيغة دولية مثل: 966501234567</span>
+                            <span style="color: black;">966501234567</span>  
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-8 text-center">
+                    <div class="section-header" style="justify-content: center;">
+                        <span class="section-number" style="color:var(--color-accent) ;">05</span> <br>
+                        <h2 class="section-title" data-ar="طلب استغاثة عن طريق تطبيق وتساب - SOS"
+                            data-en="Emergency Request via WhatsApp - SOS">طلب استغاثة عن طريق تطبيق وتساب - SOS</h2>
+                    </div>
+                    <p id="sos-des" class="section-description" style="color: var(--color-dark-navy);"
+                        data-ar="في حالة الطوارئ، أرسل موقعك الحالي مباشرة عبر الواتساب"
+                        data-en="In case of emergency, send your current location directly via WhatsApp">
+                        في حالة الطوارئ، أرسل موقعك الحالي مباشرة عبر الواتساب
+                    </p>
+
+                    <button class="btn-sos" onclick="showSOSInput()">
+                        <span data-ar=" طوارئ - SOS" data-en="Emergency - SOS">SOS</span>
+                    </button>
+
+                    <div class="sos-input-container" id="sosInputContainer">
+                        <input type="tel" class="sos-input" id="sosPhoneInput" placeholder="966501234567"
+                            data-placeholder-ar="966501234567" data-placeholder-en="966501234567">
+                        <button class="btn-sos mt-3" onclick="sendSOSWhatsApp()"
+                            style="font-size: 1rem; padding: 15px 40px;">
+                            <span data-ar="إرسال الموقع الآن" data-en="Send Location Now">إرسال الموقع الآن</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Destination Image Slider (Apple Style) -->
+    <section class="slider-section" id="landmarks">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-header" style="justify-content: center;">
+                </div>
+                <p class="section-description" style="color: var(--color-light-gray);"
+                    data-ar="استكشف جمال المشاعر المقدسة من خلال بعض صور للأماكن المميزة هناك "
+                    data-en="Explore the beauty of sacred sites through high-quality images">استكشف بعض الأماكن من
+                    المشاعر المقدسة من خلال بعض الصور
+                </p>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Kaaba -->
+                <div class="slide active kaaba-slide">
+                    <img src="./img/img4.jpg" alt="Kaaba">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="الكعبة المشرفة" data-en="The Holy Kaaba">الكعبة المشرفة</h3>
+                        <p class="slide-description" data-ar="قبلة المسلمين في المسجد الحرام - أقدس بقعة في الإسلام"
+                            data-en="The Qibla of Muslims - The holiest site in Islam">قبلة المسلمين في المسجد الحرام -
+                            أقدس بقعة في الإسلام</p>
+                    </div>
+                </div>
+
+                <div class="slide kaaba-slide">
+                    <img src="./img/img2.jpg" alt="Masjid Al-Haram">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="المسجد الحرام" data-en="Al-Masjid Al-Haram">المسجد الحرام</h3>
+                        <p class="slide-description" data-ar="أعظم مسجد في الإسلام - يتسع لملايين المصلين"
+                            data-en="The greatest mosque in Islam">أعظم مسجد في الإسلام - يتسع لملايين المصلين</p>
+                    </div>
+                </div>
+
+                <div class="slide kaaba-slide">
+                    <img src="./img/img1.jpg" alt="Masjid Al-Haram">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="المسجد الحرام" data-en="Al-Masjid Al-Haram">المسجد الحرام</h3>
+                        <p class="slide-description" data-ar="أعظم مسجد في الإسلام - يتسع لملايين المصلين"
+                            data-en="The greatest mosque in Islam">أعظم مسجد في الإسلام - يتسع لملايين المصلين</p>
+                    </div>
+                </div>
+
+                <!-- Mina -->
+                <div class="slide mina-slide" >
+                    <img src="./img/mina1.jpg" alt="Mina">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="خيام منى" data-en="Mina Tents">خيام منى</h3>
+                        <p class="slide-description" data-ar="مدينة الخيام البيضاء - مبيت الحجاج أيام التشريق"
+                            data-en="City of white tents">مدينة الخيام البيضاء - مبيت الحجاج أيام التشريق</p>
+                    </div>
+                </div>
+
+                <div class="slide mina-slide" >
+                    <img src="./img/جسر الخيام.png" alt="Jamarat">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="جسر الجمرات" data-en="Jamarat Bridge">جسر الجمرات</h3>
+                        <p class="slide-description" data-ar="موقع رمي الجمرات الثلاث في منى"
+                            data-en="Site of stoning the three pillars">موقع رمي الجمرات الثلاث في منى</p>
+                    </div>
+                </div>
+                <!-- Arafat -->
+                <div class="slide arafat-slide" >
+                    <img src="https://images.pexels.com/photos/7249387/pexels-photo-7249387.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Arafat">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="جبل عرفات" data-en="Mount Arafat">جبل عرفات</h3>
+                        <p class="slide-description" data-ar="الجبل المقدس - موقف الحجاج يوم عرفة"
+                            data-en="The sacred mountain">الجبل المقدس - موقف الحجاج يوم عرفة</p>
+                    </div>
+                </div>
+
+                <!-- Muzdalifah -->
+                <div class="slide muzdalifah-slide" >
+                    <img src="https://images.pexels.com/photos/13836991/pexels-photo-13836991.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Muzdalifah">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="مزدلفة" data-en="Muzdalifah">مزدلفة</h3>
+                        <p class="slide-description" data-ar="المشعر الحرام - المبيت ليلة العاشر من ذي الحجة"
+                            data-en="Al-Mash'ar Al-Haram">المشعر الحرام - المبيت ليلة العاشر من ذي الحجة</p>
+                    </div>
+                </div>
+
+                <!-- Jamarat -->
+                <div class="slide jamarat-slide">
+                    <img src="https://images.pexels.com/photos/10434330/pexels-photo-10434330.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                        alt="Jamarat">
+                    <div class="slide-content">
+                        <h3 class="slide-title" data-ar="الجمرات" data-en="Jamarat">الجمرات</h3>
+                        <p class="slide-description" data-ar="جسر الجمرات - موقع رمي الجمرات الثلاث"
+                            data-en="Jamarat Bridge">جسر الجمرات - موقع رمي الجمرات الثلاث</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <h3 data-ar="موارد مفيدة" data-en="Useful Resources">موارد مفيدة</h3>
+
+            <div class="resource-grid">
+                <div class="resource-item">
+                    <h5 data-ar="دليل الحج" data-en="Hajj Guide">دليل الحج</h5>
+                    <p data-ar="دليل شامل لمناسك الحج خطوة بخطوة"
+                        data-en="Comprehensive step-by-step guide for Hajj rituals">دليل شامل لمناسك الحج خطوة بخطوة</p>
+                </div>
+                <div class="resource-item">
+                    <h5 data-ar="أرقام الطوارئ" data-en="Emergency Numbers">أرقام الطوارئ</h5>
+                    <p data-ar="أرقام هامة للتواصل في حالات الطوارئ" data-en="Important numbers for emergency contact">
+                        أرقام هامة للتواصل في حالات الطوارئ</p>
+                </div>
+                <div class="resource-item">
+                    <h5 data-ar="نصائح صحية" data-en="Health Tips">نصائح صحية</h5>
+                    <p data-ar="نصائح طبية هامة للحجاج" data-en="Important medical tips for pilgrims">نصائح طبية هامة
+                        للحجاج</p>
+                </div>
+                <div class="resource-item">
+                    <h5 data-ar="الدعم الفني" data-en="Technical Support">الدعم الفني</h5>
+                    <p data-ar="فريق دعم متاح على مدار الساعة" data-en="Support team available 24/7">فريق دعم متاح على
+                        مدار الساعة</p>
+                </div>
+            </div>
+
+            <div class="footer-brand">
+                <span>SkyHopper</span>
+                <span class="footer-tagline" data-ar="رفيقك في رحلة الحج" data-en="Your Hajj Journey Companion">رفيقك في
+                    رحلة الحج</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/features.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper | Flights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">SkyHopper</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="flights.html">Flights</a></li>
+                    <li><a href="login.html" id="nav-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content justify-center padding-6rem">
+        <section class="text-center">
+            <h2>Available Flights</h2>
+            <p class="text-secondary mb-40 font-1-1rem">Find and book your perfect flight from our selection of routes
+            </p>
+            <div class="flights-layout">
+                <!-- Sidebar Filters -->
+                <aside class="filters card">
+                    <h3>Filters</h3>
+                    <div class="form-group">
+                        <label for="filter-price">Max Price: <span id="price-value">$1500</span></label>
+                        <input type="range" id="filter-price" min="100" max="1500" value="1500" step="50">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-airline">Airline</label>
+                        <select id="filter-airline">
+                            <option value="all">All Airlines</option>
+                            <option value="SkyWays">SkyWays</option>
+                            <option value="Air Comfort">Air Comfort</option>
+                            <option value="Global Jet">Global Jet</option>
+                            <option value="Pacific Air">Pacific Air</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-outline width-full mt-15">Apply Filters</button>
+                </aside>
+
+                <!-- Flight Cards Container -->
+                <section class="flight-list" id="flights-container">
+                    <div class="loading-center"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-lg-12">
+                        <h3>Travel Resources</h3>
+                        <div class="resource-grid">
+                            <div class="resource-item">
+                                <h5>Flight Search</h5>
+                                <p>Find the best flight deals with real-time price comparisons,
+                                    flexible date options, and multiple airline choices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Hotel Bookings</h5>
+                                <p>Discover and book hotels worldwide with detailed descriptions,
+                                    verified guest reviews, and competitive prices.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Guides</h5>
+                                <p>Explore destinations with curated travel guides, tips,
+                                    and recommendations to plan your perfect trip.</p>
+                            </div>
+                            <div class="resource-item">
+                                <h5>Travel Insurance</h5>
+                                <p>Comprehensive travel insurance coverage for peace of mind
+                                    during your journeys around the world.</p>
+                            </div>
+                        </div>
+                        <div class="footer-brand">
+                            <span>SKYHOPPER</span>
+                            <span class="footer-tagline"> © 2026 SkyHopper Airlines. Student Project.</span>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/flights.js"></script>
+</body>
+
+</html>

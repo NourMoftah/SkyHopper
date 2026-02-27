@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHopper | Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+
+    <style>
+        /* body { */
+
+        /* .login-page {
+                min-height: 100vh;
+                background-image: url("img/م.jpeg") !important;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            
+            .login-container {
+                background: rgba(255, 255, 255, 0.85);
+                padding: 30px;
+                border-radius: 12px;
+                width: 100%;
+                max-width: 400px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+
+            font-family: "Poppins",
+            Arial,
+            sans-serif;
+            background: #0B1B2B;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 40px 45px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            width: 380px;
+            text-align: center;
+        } */
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* خلفية صفحة اللوجن */
+        .login-page {
+            min-height: 100vh;
+            background-image: url("./img/ضض.jpeg");
+            /* تأكدي من المسار */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Wrapper */
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.88);
+            /* background: rgba(255, 255, 255, 0.25); */
+           
+            /* backdrop-filter: blur(12px); */
+           
+            /* -webkit-backdrop-filter: blur(12px); */
+            
+            padding: 40px 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 380px;
+            text-align: center;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url("./img/ضض.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .logo-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #0B1B2B;
+            margin-bottom: 10px;
+        }
+
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 1px solid #030b35ff;
+            padding: 3px;
+            background-color: #fff;
+            box-shadow: 0 0 12px rgba(72, 169, 166, 0.35);
+            transition: transform 0.3s ease;
+            margin-bottom: 6px;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px #F2B602;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        h3 {
+            color: #777;
+            font-weight: normal;
+            font-size: 15px;
+            margin: 10px 0 25px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 18px;
+        }
+
+        .input-group input {
+            width: 80%;
+            padding: 12px 40px 12px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            background: #F5F7FA;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #F2B602;
+            box-shadow: 0 0 6px rgba(242, 182, 2, 0.35);
+        }
+
+        .input-group i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+
+        .btn-login {
+            background: #F2B602;
+            color: #fff;
+        }
+
+        .btn-login:hover {
+            background: #e0a800;
+        }
+
+        .btn-reset {
+            background: #7f8c8d;
+            color: #fff;
+        }
+
+        .btn-reset:hover {
+            background: #95a5a6;
+        }
+
+        .link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #F2B602;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="login-page">
+
+    <div class="page-wrapper">
+        <div class="login-container">
+            <a href="index.html" class="logo-link">
+                <img src="./img/logo.png" alt="SkyHopper Logo" class="logo-img">
+                <h1>SkyHopper</h1>
+            </a>
+
+            <h3>Your Journey to Makkah Starts Here</h3>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="login-email" placeholder="Enter your email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="login-password" placeholder="Enter your password" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="error-message" id="error-message"></div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-right-to-bracket"></i> Login
+                </button>
+
+                <button type="reset" class="btn-reset">
+                    <i class="fas fa-rotate-right"></i> Reset
+                </button>
+            </form>
+
+            <div class="link">
+                Don't have an account? <a href="register.html">Register here</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
